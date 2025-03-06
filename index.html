@@ -16,11 +16,12 @@
             text-align: center;
             padding: 5vw;
             box-sizing: border-box;
+            overflow: hidden;
         }
         .gift-box {
             width: 50vw;
             max-width: 300px;
-            background: url('Gift.gif') no-repeat center;
+            background: url('/mnt/data/Gift.gif') no-repeat center;
             background-size: contain;
             height: 50vw;
             max-height: 300px;
@@ -32,6 +33,7 @@
             opacity: 0;
             transform: scale(0.8);
             transition: opacity 2s ease-in-out, transform 1.5s ease-in-out;
+            display: none;
         }
         @media (min-width: 768px) {
             .gift-box {
@@ -58,6 +60,7 @@
         setTimeout(() => {
             document.getElementById('gift').style.display = 'none';
             document.getElementById('message').style.display = 'block';
+            document.body.style.overflow = 'auto'; // Разрешаем прокрутку после появления текста
             setTimeout(() => {
                 document.getElementById('message').style.opacity = 1;
                 document.getElementById('message').style.transform = 'scale(1)';
